@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <title>个人日程管理系统</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- 加载 supabase SDK -->
+  <!-- 加载 Supabase SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-  <!-- defer 确保在 DOM 和 supabase 加载完后再运行 -->
+  <!-- 使用 defer，确保在 DOM 和 supabase 加载完成后再运行 app.js -->
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -21,6 +21,10 @@
   <!-- 主页面 -->
   <div id="mainPage" class="hidden">
     <button id="logoutBtn" onclick="logout()" style="float:right;">退出登录</button>
+
+    <!-- 仅 admin 用户显示此按钮 -->
+    <button id="userMgmtBtn" onclick="location.href='users.html'" class="hidden">用户管理</button>
+
     <h2>未完成任务</h2>
     <div id="tasksContainer"></div>
     <br>
