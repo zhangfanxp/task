@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>个人日程管理系统</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 登录页 -->
+  <div id="loginPage">
+    <h2>登录</h2>
+    <input type="text" id="loginUsername" placeholder="用户名"><br><br>
+    <input type="password" id="loginPassword" placeholder="密码"><br><br>
+    <button onclick="login()">登录</button>
+  </div>
+
+  <!-- 主页面 -->
+  <div id="mainPage" class="hidden">
+    <button id="logoutBtn" onclick="logout()" style="float:right;">退出登录</button>
+    <h2>未完成任务</h2>
+    <div id="tasksContainer"></div>
+    <br>
+    <input type="text" id="newTask" placeholder="输入新任务...">
+    <button onclick="addTask()">添加任务</button>
+
+    <div class="tabs">
+      <span class="tab-btn active-tab" onclick="showTab('incomplete')">未完成</span>
+      <span class="tab-btn" onclick="showTab('completed')">已完成</span>
+    </div>
+
+    <div id="completedContainer" class="hidden">
+      <h2>已完成任务</h2>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

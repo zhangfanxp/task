@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.hidden {
+  display: none;
+}
+
+.task {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  position: relative;
+  background: #fff;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.task:hover {
+  background: #f0f0f0;
+}
+
+.task-menu {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: none;
+}
+
+.task:hover .task-menu {
+  display: inline-block;
+}
+
+.tabs {
+  margin-top: 20px;
+}
+
+.tab-btn {
+  padding: 10px;
+  cursor: pointer;
+  display: inline-block;
+  color: #333;
+}
+
+.active-tab {
+  font-weight: bold;
+  text-decoration: underline;
+}
