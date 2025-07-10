@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>用户管理</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script defer src="users.js"></script>
+</head>
+<body>
+  <h2>用户管理</h2>
+  <button onclick="logout()">返回首页</button>
+  <br><br>
+  <button onclick="showAddUserForm()">新增用户</button>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody id="usersTableBody">
+      <!-- 用户数据将动态插入 -->
+    </tbody>
+  </table>
+
+  <!-- 弹窗：添加或编辑用户 -->
+  <div id="userForm" class="hidden">
+    <h3 id="formTitle">添加用户</h3>
+    <input type="hidden" id="userId">
+    <input type="text" id="username" placeholder="用户名"><br><br>
+    <input type="password" id="password" placeholder="密码"><br><br>
+    <button onclick="submitUserForm()">保存</button>
+    <button onclick="hideUserForm()">取消</button>
+  </div>
+</body>
+</html>
+
