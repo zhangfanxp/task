@@ -16,15 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
       .eq('password', password)
       .single();
 
-    if (user) {
-      currentUser = user;
-      document.getElementById('loginPage').classList.add('hidden');
-      document.getElementById('mainPage').classList.remove('hidden');
-      loadTasks();
-    } else {
-      alert('用户名或密码错误');
-    }
-  };
+if (user) {
+  currentUser = user;
+
+  // 保存到 sessionStorage（供 users.html 验证用）
+  sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+  document.getElementById('loginPage').classList.add('hidden');
+  document.getElementById('mainPage').classList.remove('hidden');
+
+  // ✅ 如果是 admin，显示用户管理按钮
+  if (currentUser.username === 'admin') {
+    const btn = document.getElementById('userMgmtBtn');
+    if (btn) btn.classList.remove('hidden');
+  }
+
+  loadTasks();
+}
 
   async function loadTasks() {
     const { data: incompleteTasks } = await supabaseClient
