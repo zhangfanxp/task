@@ -118,4 +118,4 @@ if (user) {
     document.getElementById('loginUsername').value = '';
     document.getElementById('loginPassword').value = '';
   };
-}
+
